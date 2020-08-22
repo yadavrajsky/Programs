@@ -1,1 +1,26 @@
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reverse the string</title>
+    </head>
+    <body>
+        <div style="display: flex;">
+            <input type="text" name="str" placeholder="Enter a string" style="width:50%;" oninput="reverse_str_f()">
+            <input type="text" name="reverse_str" placeholder="Reversed string" style="width:50%;">
+        </div>
+        <script type="text/javascript">
+        function reverse_str_f()
+        {
+        document.getElementsByName("reverse_str")[0].value="";
+        var a="Akash";
+        var str=document.getElementsByName("str")[0].value;
+        var i=str.length
+        while(i>0)
+        {
+        document.getElementsByName("reverse_str")[0].value+=str[i-1];
+        i=i-1;
+        }
+        }
+        </script>
+    </body>
+</html>
