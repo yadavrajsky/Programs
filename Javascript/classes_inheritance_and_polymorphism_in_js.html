@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes, Inheritance,Polymorphism in JS</title>
+</head>
+
+<body>
+    <script>
+        const date = new Date();
+
+        class School {
+            constructor(name) {
+                this.name = name;
+
+            }
+            work() {
+                console.log("Temple for knowledge");
+
+            }
+            static isworkingday(date) {
+                if (date.getDay() === 6 || date.getDay() === 0) {
+                    return "Its holiday today!";
+
+                } else {
+                    return "Its Working day today";
+                }
+            }
+        }
+        let school = new School("Raghavdas Vidyalaya")
+        school.work();
+        console.log(School.isworkingday(date));
+        class Teacher extends School {
+            constructor(name, subject) {
+                super(name);
+                this.subject = subject;
+            }
+            work() {
+                console("Teaches the students.");
+            }
+            set set_subject(sub) {
+                console.log("Subject changed successfully to ")
+                this.subject = sub;
+            }
+            get get_subject() {
+                return this.subject
+            }
+        }
+        let t1 = new Teacher("Manishkumar Yadav", "Electronics");
+        console.log(`Teacher name : ${t1.name} 
+        Subject: ${t1.subject}`);
+        t1.set_subject = "IT";
+        console.log(t1.get_subject)
+        class Student extends Teacher {
+            constructor(name) {
+                super(name);
+            }
+            work() {
+                console.log("Acquire the knowledge.");
+            }
+
+
+        }
+        let s1 = new Student("Akash Yadav");
+        console.log(s1.name);
+        s1.work();
+    </script>
+</body>
+
+</html>
