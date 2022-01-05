@@ -1,0 +1,58 @@
+class ThrowDemo extends Exception {
+
+    ThrowDemo() {
+        super("Used for throwing exception");
+    }
+
+    public String toString() {
+        return "This is Custom Exception";
+    }
+
+}
+
+class Test {
+    public void test()
+    {
+        System.out.println("Test");
+    }
+}
+
+ class ThrowsDemo1 extends Test {
+     //overridden method does not throw
+     public void test() throws {
+         try {
+             b();
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+     }
+
+     public void b() throws Exception {
+         c();
+     }
+
+     public void c() throws Exception {
+         d();
+     }
+
+     public void d() throws Exception {
+//         throw new ThrowDemo();
+         Class.forName("Mains");
+     }
+ }
+
+
+class Main {
+    public static void main(String[] args){
+        ThrowsDemo td=new ThrowsDemo();
+        ThrowsDemo1 td1=new ThrowsDemo1();
+        try {
+            td.a();
+        } catch (Exception e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+        td1.test();
+    }
+    
+}
