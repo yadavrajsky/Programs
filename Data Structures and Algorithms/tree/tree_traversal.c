@@ -259,6 +259,83 @@ void iterative_inorder(struct node *p)
 //         }
 //     }
 // }
+int countNodes(struct node *p)
+{
+    int x,y;
+    if(p)
+    return countNodes(p->lchild)+countNodes(p->rchild)+1;
+return 0;
+}
+int countLeafNodes(struct node *p)
+{
+    int x,y;
+    if(p)
+    {
+       x=countLeafNodes(p->lchild);
+       y=countLeafNodes(p->rchild); 
+    if(p->lchild==NULL && p->rchild==NULL)
+    return x+y+1;
+    return x+y;
+    }
+return 0;
+}
+int countNodesWithDegree2(struct node *p)
+{
+    int x,y;
+    if(p)
+    {
+       x=countNodesWithDegree2(p->lchild);
+       y=countNodesWithDegree2(p->rchild); 
+    if(p->lchild!=NULL && p->rchild!=NULL)
+    return x+y+1;
+    return x+y;
+    }
+return 0;
+}
+int countInternalNodes(struct node *p)
+{
+        int x,y;
+    if(p)
+    {
+       x=countInternalNodes(p->lchild);
+       y=countInternalNodes(p->rchild); 
+    if(p->lchild!=NULL || p->rchild!=NULL)
+    return x+y+1;
+    return x+y;
+    }
+return 0;
+}
+int countNodesWithDegree1(struct node *p)
+{
+            int x,y;
+    if(p)
+    {
+       x=countNodesWithDegree1(p->lchild);
+       y=countNodesWithDegree1(p->rchild); 
+    // if((p->lchild==NULL && p->rchild!=NULL )||(p->lchild!=NULL && p->rchild==NULL))
+    if(p->lchild!=NULL ^ p->rchild!=NULL )
+    return x+y+1;
+    return x+y;
+    }
+
+return 0;
+}
+int height(struct node *p)
+{
+    int x=0,y=0;
+    if (p)
+    {
+        x=height(p->lchild);
+        y=height(p->rchild);
+        if(x>y)
+        return x+1;
+        else
+        return y+1;
+    }
+        return 0;
+    
+
+}
 int main()
 {
 
@@ -277,5 +354,11 @@ int main()
     iterative_inorder(root);
     // printf("Postorder : \n");
     // iterative_postorder(root);
+    printf("Height of the tree : %d\n",height(root));
+    printf("Nodes of the tree : %d\n",countNodes(root));
+    printf("Leaf nodes of the tree : %d\n",countLeafNodes(root));
+    printf("Nodes with degree 2 of the tree : %d\n",countNodesWithDegree2(root));
+    printf("Internal nodes of the tree : %d\n",countInternalNodes(root));
+    printf("Nodes of Degree 1 of the tree : %d\n",countNodesWithDegree1(root));
     return 0;
 }
