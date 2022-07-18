@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+    <context-param>
+  <param-name>address</param-name>
+  <param-value>Pune</param-value>
+  </context-param>
+  <servlet>
+  <servlet-name>ExtParam</servlet-name>
+  <servlet-class>extparamdemo.ExtParametersDemo</servlet-class>
+  <init-param>
+  <param-name>name</param-name>
+  <param-value>Akash</param-value>
+  </init-param>
+    <init-param>
+  <param-name>surname</param-name>
+  <param-value>Yadav</param-value>
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ExtParam</servlet-name>
+  <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <display-name>ExtParamDemo</display-name>
+    <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+
+
+</web-app>
