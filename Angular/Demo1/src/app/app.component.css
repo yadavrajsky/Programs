@@ -1,0 +1,14 @@
+@import "~bootstrap/dist/css/bootstrap.css";    
+.clr
+{
+    text-align: center;
+    color:blue;
+}
+.fstyle
+{
+    font-style: italic;
+}
+.bstyle
+{
+    border :2px solid red;
+}

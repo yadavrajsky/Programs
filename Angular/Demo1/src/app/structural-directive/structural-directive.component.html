@@ -1,0 +1,54 @@
+Check if Male <input type="checkbox" (change)="val=!val">
+<!-- <div *ngIf="val;else t2"> -->
+    <div *ngIf="val then t1 ;else t2">
+        <div>You are Male</div>
+    
+</div>
+<ng-template #t1>
+    <div>
+        <div>You are Male</div>
+
+    </div>
+    </ng-template>
+    <ng-template #t2>
+    <div>
+        You are female
+    </div>
+
+</ng-template>
+<table>
+<tr *ngFor="let course of courses;let i =index">
+    <td>{{course}}</td>
+    <td><button (click)="remove(i)">Remove</button></td>
+
+</tr>
+</table>
+<button (click)="pressed_button='primes'">Primes</button>
+<button (click)="pressed_button='evens'">Evens</button>
+<button (click)="pressed_button='odds'">Odds</button>
+<div [ngSwitch]=pressed_button>
+<div *ngSwitchCase="'primes'">
+    <ul>
+        <li *ngFor="let prime of primes">
+            {{prime}}
+        </li>
+    </ul>
+
+</div>
+<div *ngSwitchCase="'evens'">
+    <ul>
+        <li *ngFor="let even of evens">
+            {{even}}
+        </li>
+    </ul>
+
+</div>
+<div *ngSwitchCase="'odds'">
+    <ul>
+        <li *ngFor="let odd of odds">
+            {{odd}}
+        </li>
+    </ul>
+
+</div>
+</div>

@@ -1,0 +1,78 @@
+<!-- <app-sign-in></app-sign-in> -->
+
+
+<!-- Property Binding -->
+<img src={{src}} height="100px" width="100px">
+<button [disabled]=state>Press</button>
+
+<table class="text-center">
+  <tr>
+    <th colSpan={{col}}>Company</th>
+    <!-- <th>Contact</th> -->
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td [attr.colspan]=w>Alfreds Futterkiste</td>
+    <!-- <td>Maria Anders</td> -->
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td [attr.colspan.px]=wd>Centro comercial Moctezuma</td>
+    <!-- <td>Francisco Chang</td> -->
+    <td>Mexico</td>
+  </tr>
+</table>
+<!-- style binding -->
+<div [style.backgroundColor]=color [style.width]=width>
+  I am Sky
+</div>
+<div [style.backgroundColor]=color [style.width.px]=wdx>
+  I am Yadav
+</div>
+
+<div [style]="{
+    width:width,
+    height:'100px', 
+    border:'1px solid red'
+
+}">
+  Baah Mulahija
+</div>
+
+<div [ngStyle]=currentState>
+  Baah Mulahija
+</div>
+<div class="clr fstyle bstyle">
+  Hello Duniya
+</div>
+<br>
+<!-- Class Binding -->
+
+<div [class]="['clr' ,'fstyle', 'bstyle']">
+  Hello Duniya
+</div>
+<div [ngClass]="['clr' ,'fstyle', 'bstyle']">
+  Hello Duniya
+</div>
+<br>
+<div [class.clr]=state [class.fstyle]=true [class.bstyle]=state>
+  Hello World
+</div>
+<br>
+<br>
+<div [class]="
+{
+  clr:state,
+  bstyle:state,
+  fstyle:state
+
+}">
+  Hello Duniya
+</div>
+
+<br>
+<br>
+<br>
+<!-- <app-evvent></app-evvent> -->
+
+<app-structural-directive></app-structural-directive>

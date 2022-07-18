@@ -1,0 +1,11 @@
+{{count}}
+<button (click)="increase()">Increment</button>
+<button (click)=decrease()>Decrement</button>
+<i class='far' [class.fa-folder]=isopen [class.fa-folder-open]=!isopen (click)="openclose()" style='font-size:36px'></i>
+<!-- <input type="text" (keyup)="fun1($event)">
+<input type="text" (input)="fun1($event)">
+<input type="text" #tf (keyup)="fun2(tf.value)">  -->
+<!-- <input type="text" value={{val}} #tf1 (keyup)="val=tf1.value">  -->
+<input type="text" [(ngModel)]=val> 
+
+You Entered {{val}}
