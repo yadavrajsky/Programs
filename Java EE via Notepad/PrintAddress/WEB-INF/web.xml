@@ -1,0 +1,10 @@
+<web-app>
+    <servlet>
+        <servlet-name>Address</servlet-name>
+        <servlet-class>PrintAddress</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Address</servlet-name>
+        <url-pattern>/addr</url-pattern>
+    </servlet-mapping>
+</web-app>

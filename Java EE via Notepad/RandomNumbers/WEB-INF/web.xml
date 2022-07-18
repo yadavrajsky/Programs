@@ -1,0 +1,10 @@
+<web-app>
+    <servlet>
+        <servlet-name>RandomNumber</servlet-name>
+        <servlet-class>RandomNumbers</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RandomNumber</servlet-name>
+        <url-pattern>/RandomNumber</url-pattern>
+    </servlet-mapping>
+</web-app>

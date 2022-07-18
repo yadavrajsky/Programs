@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <context-param>
+        <param-name>address</param-name>
+        <param-value>Pune</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>ExtParam</servlet-name>
+        <servlet-class>ExtParametersDemo</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>Akash</param-value>
+        </init-param>
+        <init-param>
+            <param-name>surname</param-name>
+            <param-value>Yadav</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExtParam</servlet-name>
+        <url-pattern>/ExtParametersDemo</url-pattern>
+    </servlet-mapping>
+</web-app>
