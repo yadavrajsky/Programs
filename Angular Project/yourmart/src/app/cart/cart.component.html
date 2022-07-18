@@ -1,0 +1,61 @@
+<div class="container">
+  <table class="table border border-1 text-center">
+    <caption>Cart</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ p.payload.toJSON().products.title }}</td>
+        <td>{{ p.payload.toJSON().products.price }}</td>
+        <td>
+          <span class="d-inline-flex h-100">
+            <button
+              [ngClass]="buttonStyle"
+              value="p.key"
+              (click)="increaseQuantity(p.key,p.payload.toJSON().products, quantity.value)"
+            >
+              +
+            </button>
+            <input
+            #quantity
+              type="text"
+              class="form-control m-1 p-2 border border-dark h-100 quantity-atc text-center"
+              [value]="p.payload.toJSON().quantity"
+            />
+            <button 
+            [ngClass]="buttonStyle"  
+              (click)="decreaseQuantity(p.key,p.payload.toJSON().products, quantity.value)"
+            >
+              -
+            </button>
+          </span>
+        </td>
+        <td>{{ p.payload.toJSON().products.price * p.payload.toJSON().quantity }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeFromCart(p.key)">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Total</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>{{ totalAmount }}</th>
+        <th><a routerLink="/checkout" class="btn btn-success">Buy Now</a></th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

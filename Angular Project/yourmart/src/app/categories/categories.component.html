@@ -1,0 +1,17 @@
+<div class="list-group m-3" id="categories">
+    <a
+      href="#"
+      class="list-group-item list-group-item-action "
+      aria-current="true"
+    >
+      All Categories
+    </a>
+    <a
+      routerLink="/"
+      [queryParams]="{ category: category }"
+      class="list-group-item list-group-item-action"
+      *ngFor="let category of categories | async"
+    >
+      {{ category }}
+    </a>
+  </div>

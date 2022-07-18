@@ -1,0 +1,26 @@
+.card
+{
+    height: 220px;
+}
+.img-thumbnail
+{
+    height: 150px;
+}
+.input_value
+{
+width: 50px;
+text-align: center;
+box-sizing: border-box;
+}
+.quantitybutton
+{
+    width: 40px;
+}
+@media screen and (max-width:576px)
+{
+    .align-cards
+{
+    margin: auto;
+
+}
+}

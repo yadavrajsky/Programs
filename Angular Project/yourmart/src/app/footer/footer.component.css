@@ -1,0 +1,15 @@
+
+.footer .container section a 
+{
+    text-decoration: none;
+}
+.footer .container section a:hover
+{
+    font-weight: bold;
+}
+.footer
+{
+
+    z-index: 10;
+}
+

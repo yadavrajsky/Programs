@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-3" id="category_selector">
+    <app-categories [categories]="categories$"></app-categories>
+  </div>
+  <div class="col-md-9">
+    <div class="row mt-3">
+      <ng-container *ngFor="let product of filterProducts; let i = index">
+        <div class="col mb-3">
+          <app-product-card [Product]="product"></app-product-card>
+        </div>
+        <div class="w-100" *ngIf="(i + 1) % 3 == 0"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>

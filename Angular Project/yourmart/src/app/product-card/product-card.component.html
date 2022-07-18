@@ -1,0 +1,51 @@
+<div class="card h-100 align-cards" style="width: 18rem">
+  <img
+    src="{{ Product.imageURL }}"
+    class="card-img-top img-thumbnail"
+    alt="{{ Product.title }}"
+  />
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ Product.title
+      }}<span class="badge bg-light text-info float-end"
+        ><small>{{ Product.category }}</small></span
+      >
+    </h5>
+    <p class="card-text">Rs.{{ Product.price }} per kg</p>
+    <div class="row">
+      <div class="col-6 flex-row">
+        <span class="d-inline-flex">
+          <button
+            class="btn btn-sm text-center m-auto btn-outline-dark quantitybutton"
+            (click)="incrementQuantity()"
+          >
+            +
+          </button>
+          <input
+            type="text"
+            class="input_value form-control m-1 p-2 border border-dark h-100 quantitybutton"
+            [value]="no_of_products"
+            #quantity
+          />
+
+          <button
+            class="btn btn-sm text-center m-auto btn-outline-dark quantitybutton"
+            (click)="decrementQuantity()"
+            [disabled]="button_state"
+          >
+            -
+          </button>
+        </span>
+      </div>
+      <div class="col-6">
+        <button
+          class="btn btn-primary ms-1"
+          (click)="addToCart(Product, quantity.value)"
+          id="addToCart"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
