@@ -1,0 +1,24 @@
+<web-app>
+    <servlet>
+        <servlet-name>
+            headings
+        </servlet-name>
+        <servlet-class>HeadingPrinter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>
+            headings
+        </servlet-name>
+        <url-pattern>
+            /heading1
+        </url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>
+            headings
+        </servlet-name>
+        <url-pattern>
+            /heading2
+        </url-pattern>
+    </servlet-mapping>
+</web-app>
