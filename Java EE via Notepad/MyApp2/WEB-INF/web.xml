@@ -1,0 +1,16 @@
+<web-app>
+  <servlet>
+    <servlet-name>heading</servlet-name>
+    <servlet-class>MyFirstHttpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>heading</servlet-name>
+    <url-pattern>/heading</url-pattern>
+    <!-- <servlet-name>heading</servlet-name>
+    <url-pattern>/*</url-pattern>
+    <servlet-name>heading</servlet-name>
+    <url-pattern>/abc/*</url-pattern>
+    <servlet-name>heading</servlet-name>
+    <url-pattern>/</url-pattern> -->
+  </servlet-mapping>
+</web-app>
