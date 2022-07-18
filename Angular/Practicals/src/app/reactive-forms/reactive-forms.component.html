@@ -1,0 +1,55 @@
+<!-- <div class="container mt-5 col-md-6">
+  <form>
+
+  <div class="mb-3">
+    <label for="fname">First Name : </label>
+    <input type="text" id="fname" class="form-control" name="firstname" [formControl]="fc">
+  </div>
+  {{fc.value}}
+  <div class="mb-3">
+    <label for="lname">Last Name : </label>
+    <input type="text" id="lname" class="form-control" name="lastname" />
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+</div> -->
+<div class="container mt-5 col-md-6">
+  <form [formGroup]="fg">
+    <div class="mb-3">
+      <label for="fname">First Name : </label>
+      <input type="text" class="form-control" formControlName="fname" />
+    </div>
+    <div
+      *ngIf="uname.touched && uname.invalid"
+      class="alert alert-danger"
+    >
+      <div *ngIf="uname.errors['required']">
+        First Name cannot be empty.
+      </div>
+      <div *ngIf="uname.errors['minlength']">
+        Minimum length should be
+        {{ fg.get("fname").errors["minlength"]["requiredLength"] }}
+      </div>
+      <div *ngIf="uname.errors['isspace']">
+        Space is not allowed
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="lname">Last Name : </label>
+      <input type="text" class="form-control" formControlName="lname" />
+    </div>
+    <div
+      *ngIf="fg.get('lname').touched && fg.get('lname').invalid"
+      class="alert alert-danger"
+    >
+      <div>
+        Minimum length should be
+        {{ fg.get("lname").errors["minlength"]["requiredLength"] }}
+      </div>
+    </div>
+  </form>
+</div>

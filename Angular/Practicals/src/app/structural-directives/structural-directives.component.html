@@ -1,0 +1,44 @@
+<table>
+  <tr *ngFor="let course of courses; let i = index">
+    <td>{{ course }}</td>
+    <td><button (click)="remove(i)">remove</button></td>
+  </tr>
+</table>
+
+<!-- Check if Male
+<input type="checkbox" (change)="val=!val">
+<div *ngIf="val">You are male</div> 
+<div *ngIf="!val">You are Female</div> -->
+<!-- 
+Check if Male
+<input type="checkbox" (change)="val=!val">
+<div *ngIf="val;else t1;">You are male</div> 
+<ng-template #t1> <div>You are Female</div></ng-template> -->
+
+Check if Male
+<input type="checkbox" (change)="val = !val" />
+<div *ngIf="val; then t1; else t2"></div>
+<ng-template #t1> <div>You are Male</div></ng-template>
+<ng-template #t2> <div>You are Female</div></ng-template>
+
+<button (click)="clicked = 'prime'">primes</button>
+<button (click)="clicked = 'odd'">odds</button>
+<button (click)="clicked = 'even'">evens</button>
+
+<div [ngSwitch]="clicked">
+  <div *ngSwitchCase="'prime'">
+    <ul *ngFor="let prime of primes">
+      <li>{{ prime }}</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'even'">
+    <ul *ngFor="let even of evens">
+      <li>{{ even }}</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'odd'">
+    <ul *ngFor="let odd of odds">
+      <li>{{ odd }}</li>
+    </ul>
+  </div>
+</div>

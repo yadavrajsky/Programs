@@ -1,0 +1,39 @@
+<div class="container">
+    <form #form1="ngForm">
+      <div class="mb-3">
+    <label for="tx1" class="form-label">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="tx1"
+      placeholder="Text"
+      name="t1"
+      ngModel
+      #tv1="ngModel"
+      (change)="display(tv1)"
+      required
+      minlength="5"
+    /> 
+    <div *ngIf="!tv1.valid && tv1.touched">
+      <div *ngIf="tv1.errors['required']">You cannot leave it blank.</div>
+      <div *ngIf="tv1.errors['minlength']">
+        Minimum Length is {{ tv1.errors["minlength"].requiredLength }}
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="tx2" class="form-label">Last Name</label>
+    <input
+      class="form-control"
+      id="tx2"
+      name="t2"
+      ngModel
+      required
+      #tv2="ngModel"
+    >
+  </div>
+  <div>
+    <button class="btn btn-primary" [disabled]="!form1.valid" (click)="show(form1)">Submit</button>
+  </div>
+  </form>
+</div>
