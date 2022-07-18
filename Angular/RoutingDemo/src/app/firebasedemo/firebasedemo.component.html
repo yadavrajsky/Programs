@@ -1,0 +1,16 @@
+Coursename : <input type="text" #coursename><br>
+Price : <input type="text" #fees><br>
+<button (click)="insertcourse(coursename,fees)">Add</button>
+<ul>
+    <!-- Snapshot changes return whole obj  -->
+    <li *ngFor="let course of courses$|async">
+        {{course.payload | json}}
+        <input type="text" #price>
+        <button (click)="updatecourse(course.key,price)">Update</button>
+        <button (click)="deletecourse(course.key)">Delete</button>
+    </li>
+<!-- Value changes  -->
+    <!-- <li *ngFor="let course of courses$|async">
+        {{course | json}}
+    </li> -->
+</ul>

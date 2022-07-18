@@ -1,0 +1,8 @@
+<div class="container mt-3 mb-3">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let post of postsdata">
+            Id : {{ post.id }} Title : {{ post.title }}
+            <a class="btn btn-outline-primary float-end" [routerLink]="['/posts',post.id]">Get Details</a>
+        </li>
+    </ul>
+</div>
