@@ -1,22 +1,19 @@
-class Var_ags {
+class Var_args {
 
-  public void show(int ..s)
-  {
+  public void show(int[] s) {
 
-    for(int x:s)
-    {
+    for (int x : s) {
       System.out.println(x);
     }
   }
 }
 
-class Var_agsDemo
-{
+class Var_agsDemo {
 
   public static void main(String[] args) {
-    Var_ags obj=new Var_ags();
+    Var_ags obj = new Var_ags();
     obj.show(10);
-    obj.show(10,20);
-    obj.show(10,20,30);
+    obj.show(10, 20);
+    obj.show(10, 20, 30);
   }
 }
