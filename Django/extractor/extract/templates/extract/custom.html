@@ -1,0 +1,119 @@
+{% extends 'extract/form.html' %}
+{% load static %}
+{% block form_content %}
+<div class="mb-3">
+    <label for="wcgol" class="form-label">Words containing group of letters :</label>
+    <input type="text" class="form-control" id="wcgol" name="Words_containing_group_of_letters" aria-describedby="wcgolHelp">
+    <div id="wcgolHelp" class="form-text container">
+        <small>eg. ohn => J<u>ohn</u>y
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Words_containing_group_of_letters_CASE" value="Ignore">
+        <label class="form-check-label" for="exampleCheck1">Ignore CASE</label>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Words having at least one of these letters : </label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Words_Having_At_least_one_letter" aria-describedby="whaloftlHelp">
+    <div id="whaloftlHelp" class="form-text container">
+        <small>eg. Pal => <u>Pa</u>n<u>a</u>m<a>a</a>
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Words_Having_At_least_one_letter_CASE" value="Ignore">
+        <label class="form-check-label" for="exampleCheck1">Ignore CASE</label>
+    </div>
+</div>
+<div class="mb-3">
+    <label>Search For </label>
+    <div class="mb-3 form-check ml-2">
+        <input type="checkbox" class="form-check-input search_for" name="CapitalLetters" id="capital_letters" value="CAPITAL_LETTERS_WORDS">
+        <label class="form-check-label" for="CAPITAL_LETTERS_WORDS">CAPITAL LETTERS WORDS</label>
+        <div id="CAPITAL_LETTERS_WORDS">
+        </div>
+    </div>
+    <div class="mb-3 form-check ml-2">
+        <input type="checkbox" class="form-check-input search_for" id="small_letters" name="SmallLetters" value="small_letters_words">
+        <label class="form-check-label" for="small_letters_words">small letters words</label>
+        <div id="small_letters_words">
+        </div>
+    </div>
+    <div class="mb-3 form-check ml-2">
+        <input type="checkbox" class="form-check-input search_for" id="capital_first_letter" value="Only_First_Letter_Capital_Words" name="OnlyFirstLetter">
+        <label class="form-check-label" for="Only_First_Letter_Capital_Words">Only First Letter Capital Words</label>
+        <div id="Only_First_Letter_Capital_Words">
+        </div>
+    </div>
+    <div class="mb-3 form-check ml-2">
+        <input type="checkbox" class="form-check-input search_for" id="numeric" value="numeric_words" name="numeric">
+        <label class="form-check-label" for="numeric">numeric words</label>
+        <div id="numeric_words">
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Words Starting with group of letters : </label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Words_Starting_with_letters" aria-describedby="wswgolHelp">
+    <div id="wswgolHelp" class="form-text container">
+        <small>eg. Pal => <u>Pal</u>ak
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Words_Starting_with_letters_CASE" value="Ignore">
+        <label class="form-check-label" for="exampleCheck1">Ignore CASE</label>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Words Not Starting with group of letters : </label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Words_Not_Starting_with_letters" aria-describedby="wnswgolHelp">
+    <div id="wnswgolHelp" class="form-text container">
+        <small>eg. Joh => Cater
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Words_Not_Starting_with_letters_CASE" value="Ignore">
+        <label class="form-check-label" for="exampleCheck1">Ignore CASE</label>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Words Ending with Group of letters : </label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Words_Ending_with_letters" aria-describedby="wewgolHelp">
+    <div id="wewgolHelp" class="form-text container">
+        <small>eg. lak => Pa<u>lak</u>
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Words_Ending_with_letters_CASE" value="Ignore"> <label class="form-check-label" for="exampleCheck1">Ignore CASE</label>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Words Not Ending with Group of letters : </label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Words_Not_Ending_with_letters" aria-describedby="wnswgolHelp">
+    <div id="wnswgolHelp" class="form-text container">
+        <small>eg. Tommy => Tsunami
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Words_Not_Ending_with_letters_CASE" value="Ignore">
+        <label class="form-check-label" for="exampleCheck1">Ignore CASE</label>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Words of Particular letters : </label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Words_of_Particular_letters" aria-describedby="woplHelp">
+    <div id="woplHelp" class="form-text container">
+        <small>eg. amn => <u>aman</u>
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Words_of_Particular_letters_CASE" value="Ignore">
+        <label class="form-check-label" for="exampleCheck1">Ignore CASE</label>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Words Excluding letters : </label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Words_Excluding_letters" aria-describedby="woplHelp">
+    <div id="woplHelp" class="form-text container">
+        <small>eg. amn => bottle
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Words_Excluding_letters_CASE" value="Ignore">
+        <label class="form-check-label" for="exampleCheck1">Ignore CASE</label>
+    </div>
+</div>
+<script src="{% static 'extract/main.js' %}"></script>
+{% endblock form_content %}

@@ -1,0 +1,7 @@
+{% extends 'extract/form.html' %}
+{% load static %}
+{% block form_content %}
+<a href="{% url 'custom_email'%}" class="btn btn-primary">Customize Search
+</a>
+<input type="hidden" name="emails" value="emails">
+{% endblock form_content %}

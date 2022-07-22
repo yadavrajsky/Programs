@@ -1,0 +1,28 @@
+{% extends 'extract/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<header>
+    <link rel="stylesheet" type="text/css" href="{% static 'extract/main.css' %}">
+    <div class="container">
+        <h1 class="text-center">Extractor</h1>
+    </div>
+</header>
+<div class="container content">
+    <form method="POST" enctype="multipart/form-data">
+        <label for="selection">What do you want to search?</label>
+        <select name="selection" onchange="show_extra(this.value)">
+            <option disabled selected>--Select--</option>
+            <option>Email</option>
+            <option>Phone</option>
+            <option>Date</option>
+            <option>Custom</option>
+        </select>
+        <div id="CustomSearch">
+        </div>
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-outline-info">Submit</button>
+    </form>
+    <script src="{% static 'extract/main.js' %}"></script>
+    {% endblock content %}

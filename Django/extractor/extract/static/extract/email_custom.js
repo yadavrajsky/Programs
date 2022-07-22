@@ -1,0 +1,63 @@
+jQuery(document).ready(function($) {
+
+    $("#customize").change(function()
+
+        {
+            if (this.checked) {
+
+
+                $('#customize_email').html(
+                    `
+<div class="mb-3"><label for="email_username" class="form-label">Search using username</label>
+    <input type="text" class="form-control" id="email_username" name="EmailUsername" aria-describedby="EmailUsernameHelp">
+    <div id="EmailUsernameHelp" class="form-text container">
+        <small><u>johnripper01</u>@domain.something
+        </small>
+        </div>
+    <div class="form-row">
+        <div class="mb-3 form-check ml-auto">
+            <input type="checkbox" class="form-check-input" id="IgnoreCase" name="EmailUsernameCase" value="Ignore">
+            <label class="form-check-label" for="IgnoreCase">Ignore CASE</label>
+        </div>
+        <div class="mb-3 form-check ml-auto">
+            <input type="checkbox" class="form-check-input" id="StartingWithUsername" name="EmailStartingWithUsername" value="Ignore">
+            <label class="form-check-label" for="StartingWithUsername">Starting with username</label>
+        </div>
+        <div class="mb-3 form-check ml-auto">
+            <input type="checkbox" class="form-check-input" id="EndingWithUsername" name="EmailEndingWithUsername" value="Ignore">
+            <label class="form-check-label" for="EndingWithUsername">Ending with username</label>
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="email_domain" class="form-label">Search using Domain</label>
+    <input type="text" class="form-control" id="email_domain" name="EmailDomain" aria-describedby="EmailDomainHelp">
+    <div id="EmailDomainHelp" class="form-text container">
+        <small>johnripper01@<u>domain</u>.something
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="IgnoreCase" name="EmailDomainCase" value="Ignore">
+        <label class="form-check-label" for="IgnoreCase">Ignore CASE</label>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="email_domain" class="form-label">Search using DotSomething</label>
+    <input type="text" class="form-control" id="email_dot_something" name="EmailDotSomething" aria-describedby="EmailDotSomethingHelp">
+    <div id="EmailDotSomethingHelp" class="form-text container">
+        <small>johnripper01@domain.<u>something</u>
+        </small></div>
+    <div class="mb-3 form-check ml-1">
+        <input type="checkbox" class="form-check-input" id="IgnoreCase" name="EmailDotSomethingCase" value="Ignore">
+        <label class="form-check-label" for="IgnoreCase">Ignore CASE</label>
+    </div>
+</div>  
+
+`
+                )
+            } else
+                $('#customize_email').html("")
+
+
+
+        })
+});

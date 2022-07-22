@@ -1,0 +1,19 @@
+{% extends 'extract/base.html' %}
+{% load static %}
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{% static 'extract/home.css' %}">
+{% endblock header %}
+{% block content %}
+<div class="text-center" id="main">
+    <h3 class="text-success">What do you want to search?</h3>
+    <ul style="list-style-type:none;" class="text-center">
+        <li><a href="{% url 'urls' %}" class="btn-lg btn-outline-primary w-25">URLs </a></li>
+        <li><a href="{% url 'dates' %}" class="btn-lg btn-outline-primary w-25">Date</a></li>
+        <li><a href="{% url 'email' %}" class="btn-lg btn-outline-primary w-25">Email </a></li>
+        <li class="divider"><a href="{% url 'phone' %}" class="btn-lg btn-outline-primary w-25">Phone</a></li>
+        <li><a href="{% url 'custom' %}" class="btn-lg btn-outline-primary w-25">Custom Text</a></li>
+        <li><a href="{% url 'alphanumeric' %}" class="btn-lg btn-outline-primary w-25">Alphanumeric</a></li>
+    </ul>
+</div>
+<script src="{% static 'extract/main.js' %}"></script>
+{% endblock content %}
