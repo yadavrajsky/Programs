@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IP Fetching | IP Insertion</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="document.ip_form.ip.focus()">
+    <div class="container-div">
+        <div class="container" id="ip_container_form">
+            <h1 id="heading">IP Fetching and Insertion</h1><br>
+
+            <form action="insert.php" name="ip_form" method="POST">
+                <input type="text" name="ip" placeholder="Insert IP Address" class="input-ip"
+                    oninput="check_ip_in_db(ip_form.ip.value)">
+                <div id="result"></div>
+                <button type="submit" name="Submit" value="Submit" id="Submit_IP" disabled>Submit</button><br>
+            </form>
+        </div>
+    </div>
+    </script>
+    <script>
+        function check_ip_in_db(ip) {
+            let result = "";
+            let ip_format =
+                /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+            if (ip.match(ip_format)) {
+
+                let xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        result = this.responseText;
+                        if (result == "IP Not Found") {
+                            document.getElementById("result").innerHTML = "<span style='color:green;'>" + result +
+                                "</span>";
+                            document.getElementById("Submit_IP").disabled = false;
+
+                        } else {
+                            document.getElementById("result").innerHTML = "<span style='color:red;'>" + result +
+                                "</span>";
+
+                            document.getElementById("Submit_IP").disabled = true;
+                        }
+                    }
+                }
+                xmlhttp.open("GET", "fetch.php?ip=" + ip, true);
+                xmlhttp.send();
+            } else {
+                document.getElementById("result").innerHTML = "<span style='color:red;'>Enter Valid IP Address</span>";
+                document.getElementById("Submit_IP").disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
