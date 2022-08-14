@@ -4,9 +4,11 @@ public class LinkedList {
 
     private Node start;
     private Node last;
+    private Node m_point;
     private int length;
 
     private class Node {
+
         int data;
         Node next;
 
@@ -16,18 +18,18 @@ public class LinkedList {
         }
     }
 
-    // public void add(int data) {
-    // Node node = new Node(data);
-    // if (start == null) {
-    // start = node;
-    // } else {
-    // Node temp = start;
-    // while (temp.next != null) {
-    // temp = temp.next;
-    // }
-    // temp.next = node;
-    // }
-    // }
+//    public void add(int data) {
+//        Node node = new Node(data);
+//        if (start == null) {
+//            start = node;
+//        } else {
+//            Node temp = start;
+//            while (temp.next != null) {
+//                temp = temp.next;
+//            }
+//            temp.next = node;
+//        }
+//    }
     public void add(int data) {
         Node node = new Node(data);
         if (start == null) {
@@ -40,6 +42,16 @@ public class LinkedList {
             last = last.next;
 
         }
+    }
+
+    public void addLoop() {
+        Node temp = start;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = start.next.next.next.next;
+
     }
 
     public int remove(int index) {
@@ -57,6 +69,10 @@ public class LinkedList {
         } else {
             Node temp = start;
             Node prev = start;
+//            for (int i = 0; i < index; i++) {
+//                prev = temp.next;
+//
+//            }
             int i = 0;
             while (i < index) {
                 prev = temp;
@@ -71,9 +87,9 @@ public class LinkedList {
 
     public void add(int pos, int data) {
         Node n = new Node(data);
-        if (pos > this.length || pos < 0)
+        if (pos > this.length || pos < 0) {
             System.out.println("Invalid Position.");
-        else {
+        } else {
             if (pos == 0) {
                 n.next = start;
                 start = n;
@@ -91,8 +107,40 @@ public class LinkedList {
                 n.next = temp;
                 prev.next = n;
                 this.length++;
+
             }
         }
+
+    }
+
+    public boolean isLoop() {
+        Node slow = start;
+        Node fast = start;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (slow == fast) {
+                m_point = fast;
+                return true;
+
+            }
+
+        }
+        return false;
+    }
+
+    public void removeLoop() {
+        Node fast = m_point;
+        Node slow = start;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        while (slow.next != fast) {
+            slow = slow.next;
+        }
+        slow.next = null;
+
     }
 
     public void traverse() {
