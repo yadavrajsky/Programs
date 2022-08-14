@@ -11,7 +11,10 @@ public class LinkedListDS {
         ll.add(50);
         ll.add(0, 5);
         ll.add(5, 25);
-        // ll.remove(3);
+        ll.addLoop();
+        System.out.println(ll.isLoop());
+//        ll.remove(3);
+        ll.removeLoop();
         ll.traverse();
 
     }
