@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.parent {
+    margin-left: 100px;
+    background-color: rgb(149, 198, 239);
+    padding: 20px;
+    position: relative;
+
+    height: 2000px;
+}
+
+.child {
+    /* margin: 20px; */
+    padding: 10px;
+}
+
+.child-One {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* In relative position it overflows the position relative to its static position  */
+    background-color: rgb(242, 147, 147);
+}
+
+.child-Two {
+    position: fixed;
+    z-index: 5;
+    top: 10px;
+    right: 200px;
+    background-color: rgb(129, 129, 239);
+}
+
+.child-Three {
+    position: sticky;
+    top: 10px;
+    left: 10px;
+    background-color: rgb(197, 151, 239);
+}
+
+.child-Four,
+.child-Five {
+    position: relative;
+    top: 0px;
+    /* top:500px; */
+}
+
+@supports(position:sticky) {
+
+    .child-Four {
+        position: sticky;
+        top: 0px;
+
+    }
+}

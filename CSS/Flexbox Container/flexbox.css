@@ -1,0 +1,53 @@
+.flex-container {
+    background-color: aqua;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    ;
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
+    /* align-content: space-between; */
+
+
+    height: 700px;
+}
+
+.flex-item {
+    border: 3px solid black;
+    background-color: #ccc;
+    margin: 10px;
+    width: 200px;
+
+}
+
+.flexbox-item-1 {
+
+    /* Applying all flex properties at once  */
+    /* flex: 0 1 0px; */
+    /* flex-grow flex-shrink flex-basis */
+flex: 3;
+    min-height: 100px;
+    /* width: 100px; */
+    /* flex-shrink: 0; */
+    align-self: flex-end;
+    order: 3;
+
+}
+
+.flexbox-item-2 {
+
+    min-height: 200px;
+    flex-grow: 1;
+    align-self: center;
+    /* width: 200px; */
+    flex-basis: 0;
+    order: 1;
+}
+
+.flexbox-item-3 {
+    min-height: 300px;
+    flex-grow: 2;
+    flex-basis: 0;
+    order: 2;
+    /* width: 100px; */
+}

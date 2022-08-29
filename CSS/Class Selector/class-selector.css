@@ -1,0 +1,125 @@
+/* data attribute selector */
+/* [data-red]
+{
+    background-color: darkkhaki;
+} */
+/* [data-red^="tf"]
+{
+    background-color: darkkhaki;
+} */
+
+[data-red*="ue"] {
+    background-color: darkkhaki;
+}
+
+/* pseudo element selector */
+.after-before::before {
+    content: 'Before';
+    background-color: yellow;
+}
+
+.after-before::after {
+    content: 'After';
+    background-color: blueviolet;
+}
+
+/* Universal selector */
+
+* {
+    background-color: rgb(194, 225, 252);
+}
+
+div.red.green-text {
+    color: green;
+}
+
+span,
+li {
+    color: blueviolet;
+}
+
+div .red {
+    color: red;
+}
+
+/* direct descendent */
+
+div>span {
+    background-color: brown;
+}
+
+span>b {
+    background-color: rgb(213, 255, 105);
+}
+
+/* select every descendent */
+
+li.red~li {
+    background-color: bisque;
+}
+
+/* select only one descendent */
+li.blue+li.blue {
+    background-color: aquamarine;
+}
+
+/* seudo selectors */
+li:hover {
+    background-color: blue;
+}
+
+input:focus {
+    background-color: antiquewhite;
+}
+
+input:required {
+    background-color: rgb(91, 56, 5);
+}
+
+input:checked {
+    margin: 50px;
+}
+
+input:disabled {
+    margin: 20px;
+}
+
+li:first-child {
+    background-color: red;
+}
+
+li:last-child {
+    background-color: green;
+}
+
+li.first:first-child {
+    background-color: yellow;
+}
+
+li:nth-child(2n-1) {
+    color: rgb(30, 99, 99);
+}
+
+b:only-child {
+    background-color: rgb(89, 79, 118);
+}
+
+span:first-of-type {
+    color: magenta;
+}
+
+li:last-of-type {
+    background-color: rgb(43, 16, 16);
+}
+
+li:nth-last-of-type(2n+1) {
+    color: rgb(0, 191, 255);
+}
+
+span:only-of-type {
+    background-color: cyan;
+}
+
+li:not(.blue) {
+    color: rgb(0, 0, 0);
+}

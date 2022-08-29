@@ -1,0 +1,29 @@
+#div1 {
+    display: block;
+    height: 100px;
+    /* width: 100px; */
+    background-color: bisque;
+}
+
+#span1 {
+    display: inline;
+    background-color: aqua;
+    width: 100%;
+    height: 500px;
+}
+
+#img1 {
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+
+}
+
+#span2 {
+    display: inline;
+    background-color: aqua;
+}
+
+#div2 {
+    /* display: none; */
+}

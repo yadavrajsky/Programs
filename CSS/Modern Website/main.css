@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto:wght@400;700&display=swap');
+* {
+
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+
+
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.header {
+    padding-bottom: 0.8rem;
+text-align: center;
+}
+
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgb(23, 19, 24,0.9);
+}
+
+.navbar-brand {
+    color: rgb(255, 255, 255,0.7);
+    font-size: 2rem;
+    /* text-align: center; */
+    /* margin: 0.5rem; */
+    padding: 1rem;
+    /* padding-left: 3rem; */
+    flex-grow: 0.1;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-list {
+    /* margin: 0.5; */
+    /* padding: 0.5; */
+    /* margin-left: 1.5rem; */
+    list-style: none;
+    font-size: 1.2rem;
+
+}
+
+.navbar-list li {
+    display: inline;
+    flex-grow: 1;
+    
+}
+
+.navbar-item a {
+    text-decoration: none;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+
+}
+.navbar-item a:hover {
+    background-color: white;
+    color: black;
+}
+.content {
+    background-color: white;
+    background-image: url("images/hanuman.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    color: rgba(255, 255, 255, 0.5);
+}
