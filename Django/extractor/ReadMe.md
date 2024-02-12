@@ -2,11 +2,11 @@
 
 Extractor is a powerful Django-based file processing tool designed to extract various types of data from files using regular expressions. It provides a flexible and customizable approach to search for patterns like email addresses, phone numbers, URLs, alphanumeric sequences, dates, and more.
 
-![image](https://github.com/yadavrajsky/Programs/assets/70022991/33193341-c095-4dbe-908f-af99e84c8665)
+![image](https://github.com/yadavrajsky/Programs/assets/70022991/fe9c0ede-9760-49a5-b634-54e9e7914c7e)
 
-![image](https://github.com/yadavrajsky/Programs/assets/70022991/4d09d544-7c3e-4b17-b7a6-968f015e658f)
+![image](https://github.com/yadavrajsky/Programs/assets/70022991/d5228ae8-31a0-4a58-afe2-6cdac14a7f99)
 
-![image](https://github.com/yadavrajsky/Programs/assets/70022991/806b28fe-52bd-435a-b363-58a563b87a8a)
+![image](https://github.com/yadavrajsky/Programs/assets/70022991/f5311916-6111-4347-a519-8ce958918d3c)
 
 ![image](https://github.com/yadavrajsky/Programs/assets/70022991/77a93377-a505-4495-a48a-df1ba80eb85f)
 
